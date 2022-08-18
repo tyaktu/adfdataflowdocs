@@ -1,0 +1,9 @@
+{
+	"name": "TbyDF01",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "e8710986-8a03-40af-a259-0b7dfb19fb7b",
+		"tenantId": "4b89e443-e572-4f29-bbb8-136c4ac405a9"
+	}
+}

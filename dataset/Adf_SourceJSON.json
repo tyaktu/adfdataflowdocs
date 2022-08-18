@@ -1,0 +1,57 @@
+{
+	"name": "Adf_SourceJSON",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorageGen2LinkService",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Source (ADF)"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "books.json",
+				"fileSystem": "datalakestoragegen2-filesystemname"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "string"
+				},
+				"cat": {
+					"type": "string"
+				},
+				"name": {
+					"type": "string"
+				},
+				"author": {
+					"type": "string"
+				},
+				"series_t": {
+					"type": "string"
+				},
+				"sequence_i": {
+					"type": "integer"
+				},
+				"genre_s": {
+					"type": "string"
+				},
+				"inStock": {
+					"type": "boolean"
+				},
+				"price": {
+					"type": "number"
+				},
+				"pages_i": {
+					"type": "integer"
+				}
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

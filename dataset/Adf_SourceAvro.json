@@ -1,0 +1,23 @@
+{
+	"name": "Adf_SourceAvro",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorageGen2LinkService",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Source (ADF)"
+		},
+		"annotations": [],
+		"type": "Avro",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "userdata1.avro",
+				"fileSystem": "datalakestoragegen2-filesystemname"
+			}
+		},
+		"schema": {}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
