@@ -37,7 +37,8 @@
 								"parameters": {},
 								"datasetParameters": {
 									"Movies": {},
-									"MoviesClean": {}
+									"MoviesClean": {},
+									"MoviesByYearSort": {}
 								}
 							},
 							"staging": {},

@@ -1319,11 +1319,24 @@
 								"type": "DatasetReference"
 							},
 							"name": "MoviesClean"
+						},
+						{
+							"dataset": {
+								"referenceName": "DataFlow3OutputCSV",
+								"type": "DatasetReference"
+							},
+							"name": "MoviesByYearSort"
 						}
 					],
 					"transformations": [
 						{
 							"name": "YearExtraction"
+						},
+						{
+							"name": "MoviesByYear"
+						},
+						{
+							"name": "SortByYear"
 						}
 					],
 					"scriptLines": [
@@ -1336,17 +1349,30 @@
 						"     validateSchema: false,",
 						"     ignoreNoFilesFound: false) ~> Movies",
 						"Movies derive(Year = toInteger(trim(right(title,6),'()')),",
-						"          title = toString(left(title,length(title)-6))) ~> YearExtraction",
+						"          title = toString(left(title,length(title)-6)),",
+						"     partitionBy('hash', 1)) ~> YearExtraction",
+						"YearExtraction aggregate(groupBy(Year),",
+						"     MoviesCount = count(),",
+						"     partitionBy('hash', 1)) ~> MoviesByYear",
+						"MoviesByYear sort(desc(Year, true)) ~> SortByYear",
 						"YearExtraction sink(allowSchemaDrift: true,",
 						"     validateSchema: false,",
 						"     partitionFileNames:['MoviesClean.csv'],",
-						"     truncate: true,",
 						"     umask: 0022,",
 						"     preCommands: [],",
 						"     postCommands: [],",
 						"     skipDuplicateMapInputs: true,",
 						"     skipDuplicateMapOutputs: true,",
-						"     partitionBy('hash', 1)) ~> MoviesClean"
+						"     partitionBy('hash', 1)) ~> MoviesClean",
+						"SortByYear sink(allowSchemaDrift: true,",
+						"     validateSchema: false,",
+						"     partitionFileNames:['MoviesByYearOrdered.csv'],",
+						"     umask: 0022,",
+						"     preCommands: [],",
+						"     postCommands: [],",
+						"     skipDuplicateMapInputs: true,",
+						"     skipDuplicateMapOutputs: true,",
+						"     partitionBy('hash', 1)) ~> MoviesByYearSort"
 					]
 				}
 			},
@@ -1380,7 +1406,8 @@
 								"parameters": {},
 								"datasetParameters": {
 									"Movies": {},
-									"MoviesClean": {}
+									"MoviesClean": {},
+									"MoviesByYearSort": {}
 								}
 							},
 							"staging": {},
