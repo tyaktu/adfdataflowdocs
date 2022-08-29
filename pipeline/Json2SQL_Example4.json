@@ -1,5 +1,5 @@
 {
-	"name": "Json2SQL_Example3",
+	"name": "Json2SQL_Example4",
 	"properties": {
 		"description": "ADF içinde oluşturduğum pipieline. ",
 		"activities": [
@@ -40,26 +40,76 @@
 						"mappings": [
 							{
 								"source": {
-									"path": "$['color']"
+									"path": "$['id']"
 								},
 								"sink": {
-									"name": "color"
+									"name": "id",
+									"type": "Int32"
 								}
 							},
 							{
 								"source": {
-									"path": "$['value']"
+									"path": "$['type']"
 								},
 								"sink": {
-									"name": "value"
+									"name": "type"
+								}
+							},
+							{
+								"source": {
+									"path": "$['name']"
+								},
+								"sink": {
+									"name": "name"
+								}
+							},
+							{
+								"source": {
+									"path": "$['ppu']"
+								},
+								"sink": {
+									"name": "ppu"
+								}
+							},
+							{
+								"source": {
+									"path": "$['batters']['batter'][0]['id']"
+								},
+								"sink": {
+									"name": "batters_id"
+								}
+							},
+							{
+								"source": {
+									"path": "$['batters']['batter'][0]['type']"
+								},
+								"sink": {
+									"name": "batters_type"
+								}
+							},
+							{
+								"source": {
+									"path": "$['topping'][0]['id']"
+								},
+								"sink": {
+									"name": "topping_id"
+								}
+							},
+							{
+								"source": {
+									"path": "$['topping'][0]['type']"
+								},
+								"sink": {
+									"name": "topping_type"
 								}
 							}
-						]
+						],
+						"collectionReference": ""
 					}
 				},
 				"inputs": [
 					{
-						"referenceName": "SRC_JsonExample3",
+						"referenceName": "SRC_JsonExample4",
 						"type": "DatasetReference"
 					}
 				],
@@ -69,7 +119,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"schema": "dbo",
-							"table": "JsonExample3"
+							"table": "JsonExample4"
 						}
 					}
 				]
