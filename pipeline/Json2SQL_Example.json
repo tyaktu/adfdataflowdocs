@@ -1,10 +1,10 @@
 {
-	"name": "Json2SQL",
+	"name": "Json2SQL_Example",
 	"properties": {
 		"description": "ADF içinde oluşturduğum pipieline. ",
 		"activities": [
 			{
-				"name": "Copy data1",
+				"name": "DataLakeJsonExample3toPoolSQLTable",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -43,12 +43,15 @@
 									"path": "$['color']"
 								},
 								"sink": {
-									"name": ""
+									"name": "color"
 								}
 							},
 							{
 								"source": {
 									"path": "$['value']"
+								},
+								"sink": {
+									"name": "value"
 								}
 							}
 						]

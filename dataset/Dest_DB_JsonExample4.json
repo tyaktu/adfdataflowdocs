@@ -1,0 +1,87 @@
+{
+	"name": "Dest_DB_JsonExample4",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "TestAzureSynapseAnalytics1",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"schema": {
+				"type": "string",
+				"defaultValue": "dbo"
+			},
+			"table": {
+				"type": "string"
+			}
+		},
+		"folder": {
+			"name": "JsonFileExample"
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": [
+			{
+				"name": "registration_dttm",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "first_name",
+				"type": "varchar"
+			},
+			{
+				"name": "last_name",
+				"type": "varchar"
+			},
+			{
+				"name": "email",
+				"type": "varchar"
+			},
+			{
+				"name": "gender",
+				"type": "varchar"
+			},
+			{
+				"name": "ip_address",
+				"type": "varchar"
+			},
+			{
+				"name": "cc",
+				"type": "varchar"
+			},
+			{
+				"name": "country",
+				"type": "varchar"
+			},
+			{
+				"name": "birthdate",
+				"type": "varchar"
+			},
+			{
+				"name": "salary",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "title",
+				"type": "varchar"
+			},
+			{
+				"name": "comments",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "@dataset().schema",
+			"table": "@dataset().table"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
