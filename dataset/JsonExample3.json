@@ -1,0 +1,33 @@
+{
+	"name": "JsonExample3",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorageGen2LinkService",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "JsonFileExample"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "json_example3.json",
+				"folderPath": "JsonFilesExample",
+				"fileSystem": "datalakestoragegen2-filesystemname"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"color": {
+					"type": "string"
+				},
+				"value": {
+					"type": "string"
+				}
+			}
+		}
+	}
+}
