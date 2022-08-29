@@ -1,5 +1,5 @@
 {
-	"name": "JsonExample3",
+	"name": "SRC_JsonExample3",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorageGen2LinkService",
