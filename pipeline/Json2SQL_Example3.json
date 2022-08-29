@@ -29,6 +29,7 @@
 					},
 					"sink": {
 						"type": "SqlDWSink",
+						"preCopyScript": "drop table JsonExample3",
 						"writeBehavior": "Insert",
 						"sqlWriterUseTableLock": false,
 						"tableOption": "autoCreate",
