@@ -1,5 +1,5 @@
 {
-	"name": "Json2SQL_Example4",
+	"name": "Json2SQL_Example4_copy1",
 	"properties": {
 		"description": "ADF içinde oluşturduğum pipieline. ",
 		"activities": [
@@ -81,10 +81,26 @@
 							},
 							{
 								"source": {
+									"path": "$['$[\\'batters\\'][\\'batter\\'][1][\\'id\\']']"
+								},
+								"sink": {
+									"name": "batters_id2"
+								}
+							},
+							{
+								"source": {
 									"path": "$['batters']['batter'][0]['type']"
 								},
 								"sink": {
 									"name": "batters_type"
+								}
+							},
+							{
+								"source": {
+									"path": "$['$[\\'batters\\'][\\'batter\\'][1][\\'type\\']']"
+								},
+								"sink": {
+									"name": "batters_type2"
 								}
 							},
 							{
