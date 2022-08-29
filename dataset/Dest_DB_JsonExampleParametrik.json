@@ -1,5 +1,5 @@
 {
-	"name": "Dest_DB_JsonExample3",
+	"name": "Dest_DB_JsonExampleParametrik",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "TestAzureSynapseAnalytics1",

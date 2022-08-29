@@ -65,7 +65,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "Dest_DB_JsonExample3",
+						"referenceName": "Dest_DB_JsonExampleParametrik",
 						"type": "DatasetReference",
 						"parameters": {
 							"schema": "dbo",
