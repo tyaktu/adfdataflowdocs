@@ -4,7 +4,7 @@
 		"description": "ADF içinde oluşturduğum pipieline. ",
 		"activities": [
 			{
-				"name": "CopyActivityDataLakeJsonToSQL",
+				"name": "CopyActivityDataLakeJsonEx3ToAzureSQL",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -30,9 +30,26 @@
 					"sink": {
 						"type": "SqlDWSink",
 						"writeBehavior": "Insert",
-						"sqlWriterUseTableLock": false
+						"sqlWriterUseTableLock": false,
+						"tableOption": "autoCreate",
+						"disableMetricsCollection": false
 					},
-					"enableStaging": false
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['color']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['value']"
+								}
+							}
+						]
+					}
 				},
 				"inputs": [
 					{
@@ -42,8 +59,12 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "AzureSynapseAnalyticsTable1_JSON",
-						"type": "DatasetReference"
+						"referenceName": "Dest_DB_JsonExample3",
+						"type": "DatasetReference",
+						"parameters": {
+							"schema": "dbo",
+							"table": "JsonExample3"
+						}
 					}
 				]
 			}
