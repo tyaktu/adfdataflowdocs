@@ -17,6 +17,16 @@
 				"typeProperties": {
 					"source": {
 						"type": "RestSource",
+						"additionalColumns": [
+							{
+								"name": "newColumnName",
+								"value": "$$COLUMN:$.MRData.DriverTable.Drivers[0].driverId"
+							},
+							{
+								"name": "newColumnName2",
+								"value": "$$COLUMN:$.MRData.DriverTable.Drivers[0].permanentNumber"
+							}
+						],
 						"httpRequestTimeout": "00:01:40",
 						"requestInterval": "00.00:00:00.010",
 						"requestMethod": "GET",
@@ -31,7 +41,78 @@
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
-					"enableStaging": false
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "['driverId']"
+								},
+								"sink": {
+									"name": "driverID"
+								}
+							},
+							{
+								"source": {
+									"path": "['permanentNumber']"
+								},
+								"sink": {
+									"name": "permanentNumber"
+								}
+							},
+							{
+								"source": {
+									"path": "['code']"
+								},
+								"sink": {
+									"name": "code"
+								}
+							},
+							{
+								"source": {
+									"path": "['url']"
+								},
+								"sink": {
+									"name": "url"
+								}
+							},
+							{
+								"source": {
+									"path": "['givenName']"
+								},
+								"sink": {
+									"name": "givenName"
+								}
+							},
+							{
+								"source": {
+									"path": "['familyName']"
+								},
+								"sink": {
+									"name": "familyName"
+								}
+							},
+							{
+								"source": {
+									"path": "['dateOfBirth']"
+								},
+								"sink": {
+									"name": "dateOfBirth"
+								}
+							},
+							{
+								"source": {
+									"path": "['nationality']"
+								},
+								"sink": {
+									"name": "nationality"
+								}
+							}
+						],
+						"collectionReference": "$['MRData']['DriverTable']['Drivers']",
+						"mapComplexValuesToString": true
+					}
 				},
 				"inputs": [
 					{
