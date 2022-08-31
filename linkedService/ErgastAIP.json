@@ -1,0 +1,12 @@
+{
+	"name": "ErgastAIP",
+	"properties": {
+		"annotations": [],
+		"type": "RestService",
+		"typeProperties": {
+			"url": "https://ergast.com/api/f1/constructors/mclaren/circuits/monza/drivers",
+			"enableServerCertificateValidation": false,
+			"authenticationType": "Anonymous"
+		}
+	}
+}
