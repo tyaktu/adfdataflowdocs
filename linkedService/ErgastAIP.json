@@ -4,7 +4,7 @@
 		"annotations": [],
 		"type": "RestService",
 		"typeProperties": {
-			"url": "https://ergast.com/api/f1/constructors/mclaren/circuits/monza/drivers.json",
+			"url": "https://ergast.com/api/f1/",
 			"enableServerCertificateValidation": false,
 			"authenticationType": "Anonymous"
 		}
