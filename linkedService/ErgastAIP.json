@@ -4,7 +4,7 @@
 		"annotations": [],
 		"type": "RestService",
 		"typeProperties": {
-			"url": "https://ergast.com/api/f1/2010/2/drivers.json",
+			"url": "https://ergast.com/api/f1/2022/2/drivers.json",
 			"enableServerCertificateValidation": false,
 			"authenticationType": "Anonymous"
 		}
