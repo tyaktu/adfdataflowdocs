@@ -50,7 +50,7 @@
 									"path": "['driverId']"
 								},
 								"sink": {
-									"name": "driverID"
+									"name": "driverId"
 								}
 							},
 							{
